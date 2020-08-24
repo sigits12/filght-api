@@ -14,3 +14,12 @@
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
+
+$router->group(['prefix' => 'flights'], function () use ($router) {
+    $router->get('', [
+    	'as' => 'index', 'uses' => 'FlightController@index'
+	]);
+	$router->post('', [
+    	'as' => 'store', 'uses' => 'FlightController@store'
+	]);
+});

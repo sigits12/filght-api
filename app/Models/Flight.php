@@ -1,15 +1,17 @@
- <?php
+<?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
 class Flight extends Model
 {
-    protected $table = 'flights';
+	protected $table = 'flights';
 
-    protected $primaryKey = 'flightNumber';
+	protected $primaryKey = 'flightNumber';
 
-    protected $dateFormat = 'c';
+	protected $dateFormat = 'c';
+
+ 	protected $fillable = ['flightNumber', 'departurePort', 'arrivalPort', 'departureTime', 'arrivalTime'];
 
 }
