@@ -10,8 +10,17 @@ class Flight extends Model
 
 	protected $primaryKey = 'flightNumber';
 
+	protected $keyType = 'string';
+
+	public $incrementing = false;
+
 	protected $dateFormat = 'c';
 
- 	protected $fillable = ['flightNumber', 'departurePort', 'arrivalPort', 'departureTime', 'arrivalTime'];
+ 	protected $fillable = ['flightNumber', 'airline', 'departurePort', 'arrivalPort', 'departureTime', 'arrivalTime'];
+
+ 	public function port()
+    {
+        return $this->belongsTo('App\Models\Port', ['departurePort', 'arrivalPort']);
+    }
 
 }

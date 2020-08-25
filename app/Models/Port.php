@@ -13,4 +13,7 @@ class Port extends Model
     protected $guarded = [];
 
     public $timestamps = false;
+
+    protected $fillable = ['port', 'timezone'];
+
 }

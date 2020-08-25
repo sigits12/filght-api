@@ -20,6 +20,7 @@ class CreateFlightsSchema extends Migration
 
         Schema::create('flights', function (Blueprint $table) {
             $table->string('flightNumber', 10);
+            $table->string('airline', 10);
             $table->string('departurePort', 3);
             $table->string('arrivalPort', 3);
             $table->dateTimeTz('departureTime', 0);

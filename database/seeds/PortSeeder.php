@@ -12,11 +12,15 @@ class PortSeeder extends Seeder
      */
     public function run()
     {
-        Port::create(
+        $data = array(
             ['port' => 'CGK', 'timezone' => 'Asia/Jakarta'],
             ['port' => 'UPG', 'timezone' => 'Asia/Makassar'],
             ['port' => 'MEL', 'timezone' => 'Australia/Melbourne'],
             ['port' => 'SYD', 'timezone' => 'Australia/Sydney']
         );
+
+        foreach ($data as $key => $value) {
+            Port::create($value);
+        }
     }
 }
